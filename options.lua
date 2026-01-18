@@ -28,11 +28,11 @@ vim.opt.cursorline = true -- Show line under cursor
 vim.opt.undofile = true -- Store undos between sessions
 
 -- Mouse
-vim.opt.mouse = 'a' -- Enable mouse mode
+vim.opt.mouse = "a" -- Enable mouse mode
 
 -- UI
 vim.opt.showmode = false -- Don't show current mode
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
@@ -41,4 +41,9 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Transparency
-vim.cmd [[highlight SignColumn guibg=NONE]]
+vim.cmd([[highlight SignColumn guibg=NONE]])
+
+vim.opt.conceallevel = 2
+vim.opt.wrap = true
+vim.opt.linebreak = true
+

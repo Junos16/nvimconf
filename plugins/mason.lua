@@ -37,7 +37,7 @@ return {
 
 				-- Scripting
 				"lua-language-server",
-				"stylua", -- Lua Formatter
+				-- "stylua", -- Lua Formatter
 				"luacheck", -- Lua Linter
 				"bash-language-server",
 				"shellcheck", -- Shell script linter
@@ -70,8 +70,8 @@ return {
 				-- "typst-lsp",
 				"tinymist",
 				"marksman", -- Markdown LSP
-				"markdownlint", -- Markdown Linter
-				"alex", -- Markdown prose linter
+				-- "markdownlint", -- Markdown Linter
+				-- "alex", -- Markdown prose linter
 				"ltex-ls", -- Grammar/spelling LSP
 				"texlab", -- LaTeX LSP
 				"chktex", -- LaTeX Linter

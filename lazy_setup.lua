@@ -18,7 +18,7 @@ require("lazy").setup({
 	require("plugins.bufferline"),
 	require("plugins.oil"),
 	require("plugins.treesitter"),
-	require("plugins.telescope"),
+	-- require("plugins.telescope"),
 	require("plugins.fzf"),
 	require("plugins.comment"),
 	require("plugins.cmp"),
@@ -28,6 +28,8 @@ require("lazy").setup({
 	require("plugins.conform"),
 	require("plugins.lint"),
 	require("plugins.transparent"),
+	require("plugins.gitlab"),
+	require("plugins.zk"),
 	-- require('plugins.haskell_tools'),
 	-- require('plugins.rustacean'),
 	-- require('plugins.lazygit')

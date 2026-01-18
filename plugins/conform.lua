@@ -45,7 +45,7 @@ return {
 			haskell = { "fourmolu" },
 
 			-- Document Processing
-			markdown = { "prettier" },
+			markdown = {},
 			tex = { "latexindent" },
 			typst = { "typstfmt" },
 

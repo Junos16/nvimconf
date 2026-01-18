@@ -40,7 +40,7 @@ return {
 			haskell = { "hlint" },
 
 			-- Document Processing
-			markdown = { "markdownlint", "alex" },
+			-- markdown = { "markdownlint", "alex" },
 			tex = { "chktex" },
 
 			-- Build files
