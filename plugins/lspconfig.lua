@@ -54,27 +54,27 @@ return {
 		end
 
 		-- Haskell Language Server
-		if vim.fn.executable("haskell-language-server-wrapper") == 1 then
-			lspconfig.hls.setup({
-				capabilities = capabilities,
-				cmd = { "haskell-language-server-wrapper", "--lsp" },
-				filetypes = { "haskell", "lhaskell", "cabal" },
-				root_dir = lspconfig.util.root_pattern(
-					"hie.yaml",
-					"stack.yaml",
-					"cabal.project",
-					"*.cabal",
-					"package.yaml"
-				),
-				settings = {
-					haskell = {
-						formattingProvider = "fourmolu",
-						cabalFormattingProvider = "cabalfmt",
-					},
-				},
-			})
-		end
-
+		-- if vim.fn.executable("haskell-language-server-wrapper") == 1 then
+		-- 	lspconfig.hls.setup({
+		-- 		capabilities = capabilities,
+		-- 		cmd = { "haskell-language-server-wrapper", "--lsp" },
+		-- 		filetypes = { "haskell", "lhaskell", "cabal" },
+		-- 		root_dir = lspconfig.util.root_pattern(
+		-- 			"hie.yaml",
+		-- 			"stack.yaml",
+		-- 			"cabal.project",
+		-- 			"*.cabal",
+		-- 			"package.yaml"
+		-- 		),
+		-- 		settings = {
+		-- 			haskell = {
+		-- 				formattingProvider = "fourmolu",
+		-- 				cabalFormattingProvider = "cabalfmt",
+		-- 			},
+		-- 		},
+		-- 	})
+		-- end
+		--
 		-- Ocaml Language Server
 		if vim.fn.executable("ocaml-lsp-server") == 1 then
 			lspconfig.ocamllsp.setup({

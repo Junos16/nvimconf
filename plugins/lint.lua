@@ -37,7 +37,7 @@ return {
 			python = { "ruff", "mypy" },
 
 			-- Functional Programming
-			haskell = { "hlint" },
+			-- haskell = { "hlint" },
 
 			-- Document Processing
 			-- markdown = { "markdownlint", "alex" },
