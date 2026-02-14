@@ -6,35 +6,52 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 		error("Error cloning lazy.nvim:\n" .. out)
 	end
 end
-
----@type vim.Option
-local rtp = vim.opt.rtp
-rtp:prepend(lazypath)
+vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	-- Core & Theme
 	require("plugins.tokyonight"),
+	require("plugins.transparent"),
 	require("plugins.whichkey"),
+
+	-- UI Refinements
 	require("plugins.lualine"),
 	require("plugins.bufferline"),
+	require("plugins.indent-blankline"),
+	require("plugins.illuminate"),
+	require("plugins.colorizer"),
+
+	-- Navigation & Utilities
 	require("plugins.oil"),
-	require("plugins.treesitter"),
-	require("plugins.telescope"),
 	require("plugins.fzf"),
+	require("plugins.telescope"),
+	require("plugins.autopairs"),
+	require("plugins.surround"),
 	require("plugins.comment"),
+
+	-- Git
+	require("plugins.gitsigns"),
+	require("plugins.lazygit"),
+	require("plugins.gitlab"),
+
+	-- Coding & LSP
+	require("plugins.treesitter"),
 	require("plugins.cmp"),
+	require("plugins.luasnip"),
 	require("plugins.mason"),
 	require("plugins.mason-lspconfig"),
 	require("plugins.lspconfig"),
 	require("plugins.conform"),
 	require("plugins.lint"),
-	require("plugins.transparent"),
-	require("plugins.gitlab"),
+	require("plugins.copilot"),
+
+	-- Language Specific
 	require("plugins.zk"),
 	require("plugins.haskell_tools"),
-	require("plugins.copilot"),
 	require("plugins.rustacean"),
+	require("plugins.markdown"),
+	require("plugins.rest"),
 
-	-- require('plugins.lazygit')
 	install = {
 		colorscheme = { "tokyonight" },
 	},

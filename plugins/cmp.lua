@@ -8,13 +8,19 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
+		"onsails/lspkind.nvim",
 	},
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+		local lspkind = require("lspkind")
 
 		-- Load friendly-snippets
 		require("luasnip.loaders.from_vscode").lazy_load()
+
+		-- Autopairs integration
+		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 		cmp.setup({
 			snippet = {
@@ -59,19 +65,20 @@ return {
 				{ name = "path", priority = 250 },
 			}),
 
-			-- Language-specific completion settings
 			formatting = {
-				format = function(entry, vim_item)
-					-- Source indicators
-					local source_names = {
+				format = lspkind.cmp_format({
+					mode = "symbol_text",
+					maxwidth = 50,
+					ellipsis_char = "...",
+					symbol_map = { Copilot = "" },
+					menu = {
 						nvim_lsp = "[LSP]",
 						luasnip = "[Snippet]",
 						buffer = "[Buffer]",
 						path = "[Path]",
-					}
-					vim_item.menu = source_names[entry.source.name]
-					return vim_item
-				end,
+						copilot = "[AI]",
+					},
+				}),
 			},
 		})
 
