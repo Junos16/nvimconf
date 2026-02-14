@@ -1,5 +1,21 @@
 local map = vim.keymap.set
 
+-- AI Toggle Function
+local function toggle_ai()
+	if vim.g.ai_enabled then
+		vim.g.ai_enabled = false
+		vim.cmd("Copilot disable")
+		print("🛑 AI Disabled")
+	else
+		vim.g.ai_enabled = true
+		vim.cmd("Copilot enable")
+		print("🟢 AI Enabled")
+	end
+end
+
+-- AI Toggle Keymap
+map("n", "<leader>ta", toggle_ai, { desc = "Toggle AI Completion" })
+
 -- Oil Keymaps
 map("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Open file explorer" })
 

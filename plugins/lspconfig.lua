@@ -38,20 +38,20 @@ return {
 		end
 
 		-- Rust Analyzer
-		if vim.fn.executable("rust-analyzer") == 1 then
-			lspconfig.rust_analyzer.setup({
-				cmd = { "rust-analyzer" },
-				filetypes = { "rust" },
-				capabilities = capabilities,
-				settings = {
-					["rust-analyzer"] = {
-						check = {
-							command = "cargo clippy",
-						},
-					},
-				},
-			})
-		end
+		-- if vim.fn.executable("rust-analyzer") == 1 then
+		-- 	lspconfig.rust_analyzer.setup({
+		-- 		cmd = { "rust-analyzer" },
+		-- 		filetypes = { "rust" },
+		-- 		capabilities = capabilities,
+		-- 		settings = {
+		-- 			["rust-analyzer"] = {
+		-- 				check = {
+		-- 					command = "cargo clippy",
+		-- 				},
+		-- 			},
+		-- 		},
+		-- 	})
+		-- end
 
 		-- Haskell Language Server
 		-- if vim.fn.executable("haskell-language-server-wrapper") == 1 then
@@ -74,7 +74,7 @@ return {
 		-- 		},
 		-- 	})
 		-- end
-		--
+
 		-- Ocaml Language Server
 		if vim.fn.executable("ocaml-lsp-server") == 1 then
 			lspconfig.ocamllsp.setup({

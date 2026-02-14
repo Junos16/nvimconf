@@ -1,6 +1,9 @@
 -- Leader Key
 vim.g.mapleader = " "
 
+-- AI
+vim.g.ai_enabled = true
+
 -- Line Numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -46,4 +49,3 @@ vim.cmd([[highlight SignColumn guibg=NONE]])
 vim.opt.conceallevel = 2
 vim.opt.wrap = true
 vim.opt.linebreak = true
-
