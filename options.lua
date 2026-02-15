@@ -1,5 +1,6 @@
 -- Leader Key
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- AI
 vim.g.ai_enabled = true

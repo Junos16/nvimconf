@@ -49,7 +49,9 @@ require("lazy").setup({
 	require("plugins.zk"),
 	require("plugins.haskell_tools"),
 	require("plugins.rustacean"),
-	require("plugins.markdown"),
+	require("plugins.render-markdown"),
+	require("plugins.vimtex"),
+	require("plugins.typst-preview"),
 	require("plugins.rest"),
 
 	install = {

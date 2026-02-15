@@ -30,6 +30,7 @@ return {
       "regex",
       "rust",
       "typescript",
+      "typst",
       "zig",
     },
     sync_install = true,
