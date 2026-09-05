@@ -6,8 +6,8 @@ The leader key is set to `Space`.
 ## 🛠️ General & Navigation
 | Key | Mode | Description |
 | :--- | :---: | :--- |
-| `<leader>e` | `N` | Open Oil file explorer in current buffer |
-| `<leader>ta` | `N` | Toggle Copilot AI completion |
+<!-- | `<leader>e` | `N` | Open Oil file explorer in current buffer | -->
+<!-- | `<leader>ta` | `N` | Toggle Copilot AI completion | -->
 | `<C-h/j/k/l>` | `I` | Move cursor in insert mode (Left/Down/Up/Right) |
 | `<C-a>` | `I` | Move cursor to beginning of line |
 | `<C-e>` | `I` | Move cursor to end of line |
@@ -36,6 +36,22 @@ The leader key is set to `Space`.
 | `<leader>ca` | `N` | Open code actions |
 | `<leader>rn` | `N` | Rename symbol (across files) |
 | `<leader>d` | `N` | Show diagnostic/error in floating window |
+
+## 📓 Jupyter & Notebooks (Molten + Jupytext)
+| Key | Mode | Description |
+| :--- | :---: | :--- |
+| `<leader>mi` | `N` | Initialize Molten (Choose Kernel) |
+| `<leader>mx` | `N` | **Execute current cell** (Smart cell detection) |
+| `<leader>mr` | `N` | Run operator (e.g., `mr ip` for paragraph) |
+| `<leader>rl` | `N` | Run current line |
+| `<leader>rv` | `V` | Run visual selection |
+| `]c` | `N` | Jump to next cell boundary (`# %%`) |
+| `[c` | `N` | Jump to previous cell boundary (`# %%`) |
+| `<leader>os` | `N` | Show output window |
+| `<leader>oh` | `N` | Hide output window |
+| `<leader>oe` | `N` | Enter output window (to scroll/copy) |
+| `<leader>rd` | `N` | Delete cell output |
+| `<leader>oa` | `N` | Activate Otter LSP (Completion in cells) |
 
 ## 📝 Markdown & Notetaking
 | Key | Mode | Description |

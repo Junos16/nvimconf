@@ -14,5 +14,9 @@ return {
 			width = "block",
 			right_pad = 1,
 		},
+		latex = {
+			enabled = true,
+			converter = "latex2text",
+		},
 	},
 }

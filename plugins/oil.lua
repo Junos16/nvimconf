@@ -17,4 +17,7 @@ return {
   -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
   dependencies = { "nvim-tree/nvim-web-devicons" }, 
   lazy = false,
+  init = function()
+    vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Open file explorer" })
+  end,
 }

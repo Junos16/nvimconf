@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- AI
-vim.g.ai_enabled = true
+-- vim.g.ai_enabled = true
 
 -- Line Numbers
 vim.opt.number = true

@@ -1,31 +1,20 @@
 local map = vim.keymap.set
 
 -- AI Toggle Function
-local function toggle_ai()
-	if vim.g.ai_enabled then
-		vim.g.ai_enabled = false
-		vim.cmd("Copilot disable")
-		print("🛑 AI Disabled")
-	else
-		vim.g.ai_enabled = true
-		vim.cmd("Copilot enable")
-		print("🟢 AI Enabled")
-	end
-end
+-- local function toggle_ai()
+-- 	if vim.g.ai_enabled then
+-- 		vim.g.ai_enabled = false
+-- 		vim.cmd("Copilot disable")
+-- 		print("🛑 AI Disabled")
+-- 	else
+-- 		vim.g.ai_enabled = true
+-- 		vim.cmd("Copilot enable")
+-- 		print("🟢 AI Enabled")
+-- 	end
+-- end
 
 -- AI Toggle Keymap
-map("n", "<leader>ta", toggle_ai, { desc = "Toggle AI Completion" })
-
--- Oil Keymaps
-map("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Open file explorer" })
-
--- Fuzzy Finding
-map("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "Find files" })
-map("n", "<leader>fg", "<cmd>FzfLua live_grep<CR>", { desc = "Live grep" })
-map("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", { desc = "Find buffers" })
-map("n", "<leader>fh", "<cmd>FzfLua help_tags<CR>", { desc = "Find help" })
-map("n", "<leader>fs", "<cmd>FzfLua git_status<CR>", { desc = "Git Status" })
-map("n", "<leader>fc", "<cmd>FzfLua git_commits<CR>", { desc = "Git Commits" })
+-- map("n", "<leader>ta", toggle_ai, { desc = "Toggle AI Completion" })
 
 -- Insert mode navigation
 map("i", "<C-h>", "<Left>", { desc = "Move cursor left" })
@@ -67,6 +56,7 @@ map("v", "<leader>ml", function()
 			vim.snippet.expand(string.format("[${1:%s}](%s)$0", selected_text, url))
 		end)
 	else
+		-- Just paste if it's not a URL
 		vim.api.nvim_feedkeys("p", "n", false)
 	end
 end, { desc = "Wrap Selection in URL" })

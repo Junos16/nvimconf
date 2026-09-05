@@ -22,7 +22,7 @@ require("lazy").setup({
 	require("plugins.colorizer"),
 
 	-- Navigation & Utilities
-	require("plugins.oil"),
+	-- require("plugins.oil"),
 	require("plugins.fzf"),
 	require("plugins.telescope"),
 	require("plugins.autopairs"),
@@ -35,6 +35,7 @@ require("lazy").setup({
 	require("plugins.gitlab"),
 
 	-- Coding & LSP
+	require("plugins.image"),
 	require("plugins.treesitter"),
 	require("plugins.cmp"),
 	require("plugins.luasnip"),
@@ -43,16 +44,24 @@ require("lazy").setup({
 	require("plugins.lspconfig"),
 	require("plugins.conform"),
 	require("plugins.lint"),
-	require("plugins.copilot"),
+	-- require("plugins.copilot"),
 
 	-- Language Specific
 	require("plugins.zk"),
 	require("plugins.haskell_tools"),
 	require("plugins.rustacean"),
-	require("plugins.render-markdown"),
+	-- require("plugins.render-markdown"),
+	require("plugins.knap"),
+	require("plugins.markdown-preview"),
+	require("plugins.img-clip"),
 	require("plugins.vimtex"),
 	require("plugins.typst-preview"),
 	require("plugins.rest"),
+
+	-- Jupyter
+	require("plugins.molten"),
+	require("plugins.otter"),
+	require("plugins.jupytext"),
 
 	install = {
 		colorscheme = { "tokyonight" },

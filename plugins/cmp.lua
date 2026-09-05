@@ -9,20 +9,37 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
 		"onsails/lspkind.nvim",
+		"onsails/lspkind.nvim",
+		"kdheepak/cmp-latex-symbols",
+		"hrsh7th/cmp-calc",
 	},
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
 
+		-- Initialize lspkind with custom symbols
+		lspkind.init({
+			symbol_map = {
+				-- Copilot = "",
+				Snippet = "󰘦",
+			},
+		})
+
 		-- Load friendly-snippets
 		require("luasnip.loaders.from_vscode").lazy_load()
+		-- Link markdown to latex/tex for snippets
+		luasnip.filetype_extend("markdown", { "latex", "tex" })
 
 		-- Autopairs integration
 		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 		cmp.setup({
+			enabled = function()
+				-- Always enable completion unless in a prompt
+				return vim.api.nvim_get_option_value("buftype", { buf = 0 }) ~= "prompt"
+			end,
 			snippet = {
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
@@ -58,9 +75,16 @@ return {
 			}),
 
 			sources = cmp.config.sources({
-				{ name = "copilot", group_index = 2 },
+				-- { name = "copilot", group_index = 2 },
 				{ name = "nvim_lsp", priority = 1000 },
 				{ name = "luasnip", priority = 750 },
+				{
+					name = "latex_symbols",
+					priority = 700,
+					option = { strategy = 0 },
+					keyword_pattern = [[\\\%(\a\|@\)*]],
+				},
+				{ name = "calc", priority = 650 },
 				{ name = "buffer", priority = 500 },
 				{ name = "path", priority = 250 },
 			}),
@@ -70,13 +94,14 @@ return {
 					mode = "symbol_text",
 					maxwidth = 50,
 					ellipsis_char = "...",
-					symbol_map = { Copilot = "" },
 					menu = {
 						nvim_lsp = "[LSP]",
 						luasnip = "[Snippet]",
 						buffer = "[Buffer]",
 						path = "[Path]",
-						copilot = "[AI]",
+						-- copilot = "[AI]",
+						latex_symbols = "[Latex]",
+						calc = "[Calc]",
 					},
 				}),
 			},
