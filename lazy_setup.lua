@@ -55,7 +55,7 @@ require("lazy").setup({
 	require("plugins.markdown-preview"),
 	require("plugins.img-clip"),
 	require("plugins.vimtex"),
-	require("plugins.typst-preview"),
+	-- require("plugins.typst-preview"),
 	require("plugins.rest"),
 
 	-- Jupyter
